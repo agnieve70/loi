@@ -69,17 +69,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
-
 	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+		<form action="<?=base_url('user/registerUser')?>" method="post">
+			<label for="firstname">Firstname</label>
+			<input type="text" name="firstname" id="firstname" class="form-control"><br>
+			<label for="lastname">Lastname</label>
+			<input type="text" name="lastname" id="lastname" class="form-control"><br>
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email" class="form-control"><br>
+			<label for="user_type">Usertype</label>
+			<select name="user_type" id="user_type" class="form-control">
+				<option value="user">User</option>
+				<option value="admin">Admin</option>
+			</select>
+			<input type="submit" value="Register">
+		</form>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
