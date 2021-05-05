@@ -42,6 +42,15 @@ class User_class extends CI_Controller implements User_interface{
 
 	public function loginUser()
 	{
-		$this->user_mdl->loginUser($this->user);
+		if($this->user_mdl->loginUser($this->user))
+		{
+			return true;
+		}
+		return "false";
+	}
+
+	public function changePassword()
+	{
+
 	}
 }

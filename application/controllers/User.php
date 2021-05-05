@@ -16,7 +16,12 @@ class User extends User_class {
 
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('register');
+	}
+
+	public function login()
+	{
+		$this->load->view('login');
 	}
 
 	public function registerUser()
@@ -28,5 +33,14 @@ class User extends User_class {
 
 		$this->user_class->setUser($this->user);
 		print_r($this->user_class->registerUser($this->user));
+	}
+
+	public function loginUser()
+	{
+		$this->user['email'] = $this->input->post('email');
+		$this->user['password'] = $this->input->post('password');
+
+		$this->user_class->setUser($this->user);
+		$this->user_class->loginUser($this->user);
 	}
 }

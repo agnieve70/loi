@@ -17,5 +17,6 @@ class User_model{
 	public function loginUser($data)
 	{
 		// login from database
+		return true;
 	}
 }

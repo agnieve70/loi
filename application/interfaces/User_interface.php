@@ -6,4 +6,5 @@ interface User_interface {
 	public function getUser($id);
 	public function registerUser();
 	public function loginUser();
+	public function changePassword();
 }
